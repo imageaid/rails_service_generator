@@ -43,7 +43,7 @@ module RailsServices
       end
 
       def parent_directory_empty?(directory_type)
-        Dir["#{Rails.root}/#{directory_type}/services/#{full_service_directory}/*"].empty?
+        Dir["#{Rails.root}/#{directory_type}/services/#{service_parent_directory}/*"].empty?
       end
 
     end
