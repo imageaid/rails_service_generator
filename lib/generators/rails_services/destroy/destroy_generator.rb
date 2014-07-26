@@ -32,20 +32,18 @@ module RailsServices
       end
 
       def manage_containing_directories(*directory_types)
-        remove_dir("app/services/#{full_service_directory}")
-        remove_dir("spec/services/#{full_service_directory}")
-        # directory_types.each do |directory_type|
-        #   if Dir["#{Rails.root}/#{directory_type}/services/#{full_service_directory}/*"].empty?
-        #     Dir.delete(Dir["#{Rails.root}/#{directory_type}/services/#{full_service_directory}"])
-        #     manage_parent_directory(directory_type) if sub_folder.present?
-        #   end
-        # end
+        directory_types.each do |directory_type|
+          remove_dir("#{directory_type}/services/#{full_service_directory}") if directory_empty?(directory_type)
+          remove_dir("#{directory_type}/services/#{service_parent_directory}") if parent_directory_empty?(directory_type)
+        end
       end
 
-      def manage_parent_directory(directory_type)
-        if Dir["#{Rails.root}/#{directory_type}/services/#{service_parent_directory}/*"].empty?
-          Dir.delete(Dir["#{Rails.root}/#{directory_type}/services/#{service_parent_directory}"])
-        end
+      def directory_empty?(directory_type)
+        Dir["#{Rails.root}/#{directory_type}/services/#{full_service_directory}/*"].empty?
+      end
+
+      def parent_directory_empty?(directory_type)
+        Dir["#{Rails.root}/#{directory_type}/services/#{full_service_directory}/*"].empty?
       end
 
     end
