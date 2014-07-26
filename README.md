@@ -1,6 +1,12 @@
 # RailsServices
 
-TODO: Write a gem description
+A very (VERY) simple gem for Rails that adds a generator for easily creating a service class and its accompanying spec file
+
+At this time, the gem only creates an RSpec test file. MiniTest and Test::Unit support forthcoming. 
+
+## Requirements 
+
+Rails 3.2.19 and higher
 
 ## Installation
 
@@ -18,15 +24,13 @@ Or install it yourself as:
 
 ## Usage
 
-Description: 
-
-+ Generates a service class and accompanying spec file
-
 Example: 
 
     $ rails generate rails_services:service Service Model|Controller Sub-folder [opt]
 
-This will create:
+## Result
+
+Two files are created:
 
 + app/services/model|controller/[sub-folder]/thing.rb
 + spec/services/model|controller/[sub-folder]/thing_spec.rb
