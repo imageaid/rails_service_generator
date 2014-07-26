@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = RailsServices::VERSION
   spec.authors       = ['Craig Kaminsky']
   spec.email         = ['imageaid@gmail.com']
-  spec.summary       = %q{Write a short summary. Required.}
-  spec.description   = %q{Write a longer description. Optional.}
+  spec.summary       = %q{A Ruby gem that adds a rails generator for creating service classes.}
+  spec.description   = %q{Speed up development when using a Service Layer by easily creating service classes and their attending test (spec) file.}
   spec.homepage      = ''
   spec.license       = 'MIT'
 
