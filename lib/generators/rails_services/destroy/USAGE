@@ -1,0 +1,9 @@
+Description:
+    Destroys a service class and accompanying spec file
+
+Example:
+    rails generate rails_services:destroy Thing Model|Controller Sub-folder [opt]
+
+    This will remove:
+        app/services/model|controller/[sub-folder]/thing.rb
+        spec/services/model|controller/[sub-folder]/thing_spec.rb
