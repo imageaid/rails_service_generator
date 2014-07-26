@@ -1,12 +1,12 @@
 module RailsServices
   module Generators
-    class ServiceGenerator < Rails::Generators::Base
+    class CreateGenerator < Rails::Generators::Base
       source_root File.expand_path('../templates', __FILE__)
       argument :service_name, type: :string
       argument :parent_name, type: :string
       argument :sub_folder, type: :string, default: ''
 
-      def generate_service
+      def create_service
         template 'base_service.rb.erb', "app/services/#{service_file_path}"
         template 'base_service_spec.rb.erb', "spec/services/#{spec_file_path}"
       end

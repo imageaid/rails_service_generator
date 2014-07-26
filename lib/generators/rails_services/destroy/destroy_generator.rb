@@ -1,6 +1,6 @@
 module RailsServices
   module Generators
-    class DestroyServiceGenerator < Rails::Generators::Base
+    class DestroyGenerator < Rails::Generators::Base
       argument :service_name, type: :string
       argument :parent_name, type: :string
       argument :sub_folder, type: :string, default: ''
