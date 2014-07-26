@@ -1,6 +1,6 @@
 # RailsServices
 
-A very (VERY) simple gem for Rails that adds a generator for easily creating a service class and its accompanying spec file
+A very (VERY) simple gem for Rails that adds a generator for easily creating a service class and its accompanying spec file.
 
 At this time, the gem only creates an RSpec test file. MiniTest and Test::Unit support forthcoming. 
 
@@ -27,6 +27,8 @@ Or install it yourself as:
 Example: 
 
     $ rails generate rails_services:service Service Model|Controller Sub-folder [opt]
+    
+Sub-folders are optional but, at this time, you may only use one sub-folder. I generally use the sub-folders when I have a naturally grouped set of services.     
 
 ## Result
 
