@@ -24,9 +24,11 @@ Or install it yourself as:
 
 ## Usage
 
-Example: 
+Examples: 
 
-    $ rails generate rails_services:service Service Model|Controller Sub-folder [opt]
+    $ rails generate rails_services:create Service Model|Controller Sub-folder [opt]
+    
+    $ rails generate rails_services:destroy Service Model|Controller Sub-folder [opt]
     
 Sub-folders are optional but, at this time, you may only use one sub-folder. I generally use the sub-folders when I have a naturally grouped set of services.     
 
