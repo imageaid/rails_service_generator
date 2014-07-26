@@ -2,7 +2,7 @@ Description:
     Generates a service class and accompanying spec file
 
 Example:
-    rails generate service Thing Model|Controller Sub-folder [opt]
+    rails generate rails_services:create Thing Model|Controller Sub-folder [opt]
 
     This will create:
         app/services/model|controller/[sub-folder]/thing.rb
