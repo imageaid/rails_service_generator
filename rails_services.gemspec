@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['imageaid@gmail.com']
   spec.summary       = %q{A Ruby gem that adds a rails generator for creating service classes.}
   spec.description   = %q{Speed up development when using a Service Layer by easily creating service classes and their attending test (spec) file.}
-  spec.homepage      = ''
+  spec.homepage      = 'https://github.com/imageaid/rails_service_generator'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
