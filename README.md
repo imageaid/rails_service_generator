@@ -1,5 +1,8 @@
 # RailsServices
 
+[![Code Climate](https://codeclimate.com/github/imageaid/rails_service_generator.png)](https://codeclimate.com/github/imageaid/rails_service_generator) 
+[![Test Coverage](https://codeclimate.com/github/imageaid/rails_service_generator/coverage.png)](https://codeclimate.com/github/imageaid/rails_service_generator) 
+
 A very (VERY) simple gem for Rails that adds a generator for easily creating a service class and its accompanying spec file.
 
 At this time, the gem only creates an RSpec test file. MiniTest and Test::Unit support forthcoming. 
