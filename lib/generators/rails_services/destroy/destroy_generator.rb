@@ -1,3 +1,5 @@
+require 'rails/generators'
+
 module RailsServices
   module Generators
     class DestroyGenerator < Rails::Generators::Base
