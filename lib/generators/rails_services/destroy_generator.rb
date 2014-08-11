@@ -1,7 +1,5 @@
-require 'rails/generators'
-
 module RailsServices
-  module Generators
+  class Generators
     class DestroyGenerator < Rails::Generators::Base
       argument :service_name, type: :string
       argument :parent_name, type: :string

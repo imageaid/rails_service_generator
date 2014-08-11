@@ -1,10 +1,20 @@
-class Test::Unit::TestCase
+ENV['RAILS_ENV'] = 'test'
+
+require 'rails'
+require 'rails/generators'
+require 'lib/generators/rails_services/destroy_generator'
+require 'lib/generators/rails_services/create_generator'
+require 'shellwords'
+require 'minitest/autorun'
+
+
+class MiniTest::Unit::TestCase
   # Transactional fixtures accelerate your tests by wrapping each test method
   # in a transaction that's rolled back on completion.  This ensures that the
   # test database remains unchanged so your fixtures don't have to be reloaded
   # between every test method.  Fewer database queries means faster tests.
   #
-  # Read Mike Clark's excellent walkthrough at
+  # Read Mike Clark's excellent walk-through at
   #   http://clarkware.com/cgi/blosxom/2005/10/24#Rails10FastTesting
   #
   # Every Active Record database supports transactions except MyISAM tables
