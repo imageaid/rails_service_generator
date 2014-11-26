@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = 'rails_services'
-  spec.version       = RailsServices::VERSION
+  spec.version       = '1.0.5'
   spec.authors       = ['Craig Kaminsky']
   spec.email         = ['imageaid@gmail.com']
   spec.summary       = %q{A Ruby gem that adds a rails generator for creating service classes.}
