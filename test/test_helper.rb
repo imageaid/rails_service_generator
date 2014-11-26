@@ -2,10 +2,12 @@ ENV['RAILS_ENV'] = 'test'
 
 require 'rails'
 require 'rails/generators'
-require 'lib/generators/rails_services/destroy_generator'
-require 'lib/generators/rails_services/create_generator'
+require_relative '../lib/generators/rails_services/destroy_generator'
+require_relative '../lib/generators/rails_services/create_generator'
 require 'shellwords'
+require 'minitest/unit'
 require 'minitest/autorun'
+require 'minitest/pride'
 
 
 class MiniTest::Unit::TestCase

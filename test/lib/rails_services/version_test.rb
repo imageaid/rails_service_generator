@@ -1,4 +1,5 @@
-require 'minitest/autorun'
+require_relative '../../test_helper'
+require_relative '../../../lib/rails_services/version'
 
 class VersionTest < Minitest::Test
 

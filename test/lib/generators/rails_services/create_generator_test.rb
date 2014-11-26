@@ -1,4 +1,4 @@
-require 'test/minitest_helper'
+require_relative '../../../../test/test_helper'
 
 class CreateGeneratorTest < Rails::Generators::TestCase
   tests ::RailsServices::Generators::CreateGenerator
