@@ -2,6 +2,7 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'rails_services/version'
+require 'rake'
 
 Gem::Specification.new do |spec|
   spec.name          = 'rails_services'
@@ -13,14 +14,16 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/imageaid/rails_service_generator'
   spec.license       = 'MIT'
 
-  spec.files         = `git ls-files -z`.split("\n")
+  spec.files         = FileList['lib/*',
+                                'bin/*',
+                                'test/*'].to_a
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'activesupport', '>= 3.2.19'
-  spec.add_dependency 'rails', '>= 3.2.19'
+  spec.add_runtime_dependency 'activesupport', '~> 3.2', '>= 4.0.0'
+  spec.add_runtime_dependency 'rails', '~> 3.2', '>= 4.0.0'
 
-  spec.add_development_dependency 'rake'
-  spec.add_development_dependency 'minitest'
+  spec.add_development_dependency 'rake', '~> 0'
+  spec.add_development_dependency 'minitest', '~> 0'
 end
