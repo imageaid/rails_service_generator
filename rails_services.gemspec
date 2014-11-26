@@ -12,6 +12,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/imageaid/rails_service_generator'
   spec.license       = 'MIT'
 
+  require 'rake'
   spec.files         = FileList['lib/*',
                                 'bin/*',
                                 'test/*'].to_a
