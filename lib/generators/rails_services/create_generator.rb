@@ -20,7 +20,7 @@ module RailsServices
 
       private
       def service_directory
-        file_path = "#{parent_name.underscore}"
+        file_path = "#{parent_name.pluralize.underscore}"
         file_path += "/#{sub_folder.underscore}" if sub_folder.present?
         file_path
       end
@@ -38,14 +38,14 @@ module RailsServices
       end
 
       def qualified_name
-        name = "#{parent_name.camelize}::"
+        name = "#{parent_name.pluralize.camelize}::"
         name += "#{sub_folder.camelize}::" if sub_folder.present?
         name += "#{service_name.camelize}"
         name
       end
 
       def module_name
-        "#{parent_name.camelize}"
+        "#{parent_name.pluralize.camelize}"
       end
 
       def subfolder_name

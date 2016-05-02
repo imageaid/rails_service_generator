@@ -4,13 +4,11 @@
 [![Test Coverage](https://codeclimate.com/github/imageaid/rails_service_generator/coverage.png)](https://codeclimate.com/github/imageaid/rails_service_generator)
 [![Gem Version](https://badge.fury.io/rb/rails_services.svg)](http://badge.fury.io/rb/rails_services)  
 
-A very (VERY) simple gem for Rails that adds a generator for easily creating a service class and its accompanying spec file.
-
-At this time, the gem only creates an RSpec test file. MiniTest and Test::Unit support forthcoming. 
+A very (VERY) simple gem for Rails that adds a generator for easily creating a service class and its accompanying spec or test unit file.
 
 ## Requirements 
 
-Rails 3.2.19 and higher
+Rails 4.2.0 and higher
 
 ## Installation
 

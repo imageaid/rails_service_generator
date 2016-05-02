@@ -11,7 +11,7 @@ class DestroyGeneratorTest < Rails::Generators::TestCase
   end
 
   test 'removes an initializer' do
-    assert_no_file 'app/services/parent_model/sub_folder/test_service.rb'
+    assert_no_file 'app/services/parent_models/sub_folder/test_service.rb'
   end
 
 end

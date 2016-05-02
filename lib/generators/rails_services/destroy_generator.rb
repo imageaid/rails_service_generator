@@ -20,7 +20,7 @@ module RailsServices
       end
 
       def service_parent_directory
-        "#{parent_name.underscore}"
+        "#{parent_name.pluralize.underscore}"
       end
 
       def service_file
