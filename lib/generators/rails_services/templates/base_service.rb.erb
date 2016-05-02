@@ -1,8 +1,13 @@
-<%= "class #{qualified_name}" %>
-
-  <%= "# SAMPLE USAGE: #{qualified_name}.call(*args)" %>
-  <%= 'def self.call' %>
-
+<%= "module #{module_name}" %>
+<% if subfolder_name.present? %>
+  <%= "module #{subfolder_name}" %>
+<% end  %>
+    <%= "class #{class_name}" %>
+      <%= "# SAMPLE USAGE: #{qualified_name}.call(*args)" %>
+      <%= 'def self.call' %>
+      <%= 'end' %>
+    <%= 'end' %>
+<% if subfolder_name.present? %>
   <%= 'end' %>
-
+<% end  %>
 <%= 'end' %>

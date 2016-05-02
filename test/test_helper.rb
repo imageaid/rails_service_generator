@@ -2,15 +2,17 @@ ENV['RAILS_ENV'] = 'test'
 
 require 'rails'
 require 'rails/generators'
+# require 'rails_service_generator'
 require_relative '../lib/generators/rails_services/destroy_generator'
 require_relative '../lib/generators/rails_services/create_generator'
 require 'shellwords'
-require 'minitest/unit'
 require 'minitest/autorun'
+require 'minitest/reporters'
 require 'minitest/pride'
 
 
 class MiniTest::Unit::TestCase
+  ActiveSupport::TestCase.test_order = :random
   # Transactional fixtures accelerate your tests by wrapping each test method
   # in a transaction that's rolled back on completion.  This ensures that the
   # test database remains unchanged so your fixtures don't have to be reloaded
