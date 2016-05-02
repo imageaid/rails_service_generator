@@ -22,4 +22,3 @@ tmp
 mkmf.log
 .idea
 .DS_Store
-Gemfile.lock
