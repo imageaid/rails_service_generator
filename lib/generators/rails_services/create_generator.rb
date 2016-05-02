@@ -6,19 +6,20 @@ module RailsServices
       argument :parent_name, type: :string
       argument :sub_folder, type: :string, default: ''
 
-      hook_for :test_framework do |framework|
-        if test_framework.try(:downcase) == 'rspec'
-          template 'base_service_spec.rb.erb', "spec/services/#{service_directory}/#{spec_file}"
-        else
-          template 'base_service_spec.rb.erb', "test/services/#{service_directory}/#{unit_file}"
-        end
-      end
-
       def create_service
         template 'base_service.rb.erb', "app/services/#{service_directory}/#{service_file}"
+        create_test
       end
 
       private
+      def create_test
+        if File.exists?('spec/spec_helper.rb')
+          template 'base_service_spec.rb.erb', "spec/services/#{service_directory}/#{spec_file}"
+        else
+          template 'base_service_unit_test.rb.erb', "test/services/#{service_directory}/#{unit_file}"
+        end
+      end
+
       def service_directory
         file_path = "#{parent_name.pluralize.underscore}"
         file_path += "/#{sub_folder.underscore}" if sub_folder.present?
