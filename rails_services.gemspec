@@ -23,9 +23,9 @@ Gem::Specification.new do |gem|
   gem.test_files    = `git ls-files -- {test,gem,features}/*`.split("\n")
   gem.require_paths = ['lib']
 
-  gem.add_runtime_dependency 'rails', '~> 3.2', '>= 3.2.0'
+  gem.add_runtime_dependency 'rails'
 
-  gem.add_development_dependency 'rake', '~> 10.4.0'
-  gem.add_development_dependency 'minitest', '~> 5.7.0'
-  gem.add_development_dependency 'minitest-reporters', '~> 1.1.0'
+  gem.add_development_dependency 'rake'
+  gem.add_development_dependency 'minitest'
+  gem.add_development_dependency 'minitest-reporters'
 end
