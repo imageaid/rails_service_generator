@@ -25,7 +25,7 @@ Gem::Specification.new do |gem|
 
   gem.add_runtime_dependency 'rails', '~> 3.2', '>= 3.2.0'
 
-  gem.add_development_dependency 'rake', '~> 0'
-  gem.add_development_dependency 'minitest', '~> 0'
-  gem.add_development_dependency 'minitest-reporters', '~> 0'
+  gem.add_development_dependency 'rake', '~> 10.4.0'
+  gem.add_development_dependency 'minitest', '~> 5.7.0'
+  gem.add_development_dependency 'minitest-reporters', '~> 1.1.0'
 end
