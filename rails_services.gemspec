@@ -15,9 +15,7 @@ Gem::Specification.new do |gem|
   gem.homepage      = 'https://github.com/imageaid/rails_service_generator'
   gem.license       = 'MIT'
 
-  gem.files         = FileList['lib/*',
-                                'bin/*',
-                                'test/*'].to_a
+  gem.files         = Dir.glob('{bin,lib}/**/*') + %w(LICENSE.txt README.md CHANGELOG.md)
 
   gem.executables   = gem.files.grep(%r{^bin/}) { |f| File.basename(f) }
   gem.test_files    = `git ls-files -- {test,gem,features}/*`.split("\n")
