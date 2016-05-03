@@ -8,7 +8,7 @@ A very (VERY) simple gem for Rails that adds a generator for easily creating a s
 
 ## Requirements 
 
-Rails 4.2.0 and higher
+Rails 4 and higher
 
 ## Installation
 
