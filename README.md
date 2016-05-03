@@ -36,10 +36,11 @@ Sub-folders are optional but, at this time, you may only use one sub-folder. I g
 
 ## Result
 
-Two files are created:
+Two files are created (spec or test based on your `test_framework`):
 
 + app/services/model|controller/[sub-folder]/thing.rb
 + spec/services/model|controller/[sub-folder]/thing_spec.rb
++ test/services/model|controller/[sub-folder]/thing_test.rb
 
 ## Contributing
 
