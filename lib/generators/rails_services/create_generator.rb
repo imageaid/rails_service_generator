@@ -5,13 +5,23 @@ module RailsServices
       argument :service_name, type: :string
       argument :parent_name, type: :string
       argument :sub_folder, type: :string, default: ''
+      argument :instance, type: :string, default: 'yes'
 
       def create_service
-        template 'base_service.rb.erb', "app/services/#{service_directory}/#{service_file}"
+        if instance == 'yes'
+          copy_base_service_class
+          template 'base_service_new.rb.erb', "app/services/#{service_directory}/#{service_file}"
+        else
+          template 'base_service_old.rb.erb', "app/services/#{service_directory}/#{service_file}"
+        end
         create_test
       end
 
       private
+      def copy_base_service_class
+        template('base_service.rb.erb', 'app/services/base_service.rb') unless File.exist?('app/services/base_service.rb')
+      end
+
       def create_test
         if File.exists?('spec/spec_helper.rb')
           template 'base_service_spec.rb.erb', "spec/services/#{service_directory}/#{spec_file}"

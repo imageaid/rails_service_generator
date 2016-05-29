@@ -28,11 +28,19 @@ Or install it yourself as:
 
 Examples: 
 
-    $ rails generate rails_services:create Service Model|Controller Sub-folder [opt]
+    $ rails generate rails_services:create Service Model|Controller Sub-folder [opt] --instance [yes (default), no]
     
-    $ rails generate rails_services:destroy Service Model|Controller Sub-folder [opt]
+    $ rails generate rails_services:destroy Service Model|Controller Sub-folder [opt] --instance [yes (default), no]
     
-Sub-folders are optional but, at this time, you may only use one sub-folder. I generally use the sub-folders when I have a naturally grouped set of services.     
+### Sub-folders
+Sub-folders are optional but, at this time, you may only use one sub-folder. I generally use the sub-folders when I have a naturally grouped set of services.
+
+### Instance Argument
+The instance argument was added in version 2.0.0. It is also optional but does default to `yes` if omitted. In previous iterations of this gem
+as well as in my early use of service layers, I did not instantiate my service classes; rather, I created all as class methods (i.e., `self.call`).
+I was never satisfied with this and, sometime in the last few months, I read a now-lost blog post on utilizing a `BaseService` class and
+instantiating your actual service. It doesn't actually change how your existing services, created with this gem, are called or executed. Ultimately,
+it's a really just a prettier implementation (ok, ok, it has some other value, too!).
 
 ## Result
 

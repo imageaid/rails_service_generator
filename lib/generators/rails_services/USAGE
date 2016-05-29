@@ -3,14 +3,20 @@ Description:
     Destroys a service class and accompanying spec file
 
 Example:
-    rails generate rails_services:destroy Thing Model|Controller Sub-folder [opt]
+    rails generate rails_services:destroy Thing Model|Controller Sub-folder [opt] --instance [yes (default), no]
 
     This will remove:
         app/services/model|controller/[sub-folder]/thing.rb
         spec/services/model|controller/[sub-folder]/thing_spec.rb
 
-    rails generate rails_services:create Thing Model|Controller Sub-folder [opt]
+    rails generate rails_services:create Thing Model|Controller Sub-folder [opt] --instance [yes (default), no]
 
     This will add:
         app/services/model|controller/[sub-folder]/thing.rb
         spec/services/model|controller/[sub-folder]/thing_spec.rb
+
+The new `instance` argument:
+    Over the last year, I have slightly altered how I structure my service classes. I've taken to using a `BaseService`
+    class that is included in all services. This allows me to inherently instantiate each service (versus the old style
+    which was "class-driven", if you will) but doesn't alter the signature or how a service is called and run - so updating to
+    the new style should be quite easy and painless.

@@ -10,6 +10,7 @@ require 'minitest/autorun'
 require 'minitest/reporters'
 require 'minitest/pride'
 
+MiniTest::Reporters.use!
 
 class MiniTest::Unit::TestCase
   ActiveSupport::TestCase.test_order = :random
