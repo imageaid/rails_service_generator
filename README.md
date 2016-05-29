@@ -37,10 +37,34 @@ Sub-folders are optional but, at this time, you may only use one sub-folder. I g
 
 ### Instance Argument
 The instance argument was added in version 2.0.0. It is also optional but does default to `yes` if omitted. In previous iterations of this gem
-as well as in my early use of service layers, I did not instantiate my service classes; rather, I created all as class methods (i.e., `self.call`).
+as well as in my early use of service layers, I did not instantiate my service classes; rather, I created adn accessed them at the class level,
+calling class methods (i.e., those defined with `self.`).
+
 I was never satisfied with this and, sometime in the last few months, I read a now-lost blog post on utilizing a `BaseService` class and
-instantiating your actual service. It doesn't actually change how your existing services, created with this gem, are called or executed. Ultimately,
-it's a really just a prettier implementation (ok, ok, it has some other value, too!).
+instantiating your actual service. I prefer this new approach, for lack of a better word, and have decided to add it to this gem, as the
+default style used going forward (starting with 2.0.0).
+
+## Upgrading
+The primary change in version 2 is that old services, those that do not include the `BaseService` class, called
+and accessed methods that were all defined with `self.`. You do not have to choose one style over another; in fact,
+you can mix and match the styles, if you wish.
+
+**Converting Old Service Classes** - Should you want to update your older/previously built services with this approach, you only need to do
+the following:
+
+     # include the base service in your class
+     class ClassName
+       include BaseService
+
+     # Then ... change the method signatures, simply removing "self." from the definition
+     def self.call
+       # ...
+     end
+     # becomes
+     def call
+       # ...
+     end
+     # and so on for other, similarly defined methods
 
 ## Result
 
