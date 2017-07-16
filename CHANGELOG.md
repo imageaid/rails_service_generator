@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.0.1] - 2017-07-16
+### Added
+- Updating gem for the Rails verions 4 AND 5
+
+## [2.0.0] - 2016-05-29
+### Added
+- Alters service object from one that was class-based to one that is instance-based (vis-a-vis methods, etc.)
+
 ## [1.1.3] - 2016-05-03
 ### Fixed
 - Fixed the name of the class in the Minitest test class
