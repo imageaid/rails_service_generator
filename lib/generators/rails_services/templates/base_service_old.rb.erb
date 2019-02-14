@@ -1,7 +1,7 @@
 <%= "module #{module_name}" %>
-<% if subfolder_name.present? %>
-  <%= "module #{subfolder_name}" %>
-<% end  %>
+<% if subfolder_name.present? %><%= "module #{subfolder_name}" %><% end  %>
+  <%= '##' %>
+  <%= "# #{qualified_name} Service Class"  %>
 <% if subfolder_name.present? %>
     <%= "class #{class_name}" %>
       <%= "# SAMPLE USAGE: #{qualified_name}.call(*args)" %>
@@ -15,7 +15,5 @@
     <%= 'end' %>
   <%= 'end' %>
 <% end  %>
-<% if subfolder_name.present? %>
-  <%= 'end' %>
-<% end  %>
+<% if subfolder_name.present? %><%= 'end' %><% end  %>
 <%= 'end' %>

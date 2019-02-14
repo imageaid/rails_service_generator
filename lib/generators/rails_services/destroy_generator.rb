@@ -1,5 +1,7 @@
 module RailsServices
   class Generators
+    ##
+    # destroys a service class
     class DestroyGenerator < Rails::Generators::Base
       argument :service_name, type: :string
       argument :parent_name, type: :string
@@ -13,14 +15,15 @@ module RailsServices
       end
 
       private
+
       def full_service_directory
-        file_path = "#{service_parent_directory}"
+        file_path = service_parent_directory.to_s
         file_path += "/#{sub_folder.underscore}" if sub_folder.present?
         file_path
       end
 
       def service_parent_directory
-        "#{parent_name.pluralize.underscore}"
+        parent_name.pluralize.underscore.to_s
       end
 
       def service_file
@@ -45,7 +48,6 @@ module RailsServices
       def parent_directory_empty?(directory_type)
         Dir["#{Rails.root}/#{directory_type}/services/#{service_parent_directory}/*"].empty?
       end
-
     end
   end
 end

@@ -56,8 +56,8 @@ the following:
      class ClassName
        include BaseService
 
-     # Then ... change the method signatures, simply removing "self." from the definition
-     def self.call
+     # Then ... add an initialize method and change the method signatures, simply removing from the definition     
+     def call
        # ...
      end
      # becomes

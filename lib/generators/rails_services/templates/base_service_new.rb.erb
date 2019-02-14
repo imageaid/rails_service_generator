@@ -1,23 +1,25 @@
 <%= "module #{module_name}" %>
-<% if subfolder_name.present? %>
+<% if subfolder_name.present? -%>
   <%= "module #{subfolder_name}" %>
-<% end  %>
-<% if subfolder_name.present? %>
+<% end -%>
+  <%= '##' %>
+  <%= "# #{qualified_name} Service Class"  %>
+<% if subfolder_name.present? -%>
     <%= "class #{class_name}" %>
       <%= 'include BaseService' %>
       <%= "# SAMPLE USAGE: #{qualified_name}.(*args)" %>
-      <%= 'def call' %>
-      <%= 'end' %>
+      <%= 'def initialize(_args);' %> <%= 'end' %>
+      <%= 'def call;' %> <%= 'end' %>
     <%= 'end' %>
-<% else %>
+<% else -%>
   <%= "class #{class_name}" %>
     <%= 'include BaseService' %>
     <%= "# SAMPLE USAGE: #{qualified_name}.(*args)" %>
-    <%= 'def call' %>
-    <%= 'end' %>
+    <%= 'def initialize(_args);' %> <%= 'end' %>
+    <%= 'def call;' %> <%= 'end' %>
   <%= 'end' %>
-<% end  %>
-<% if subfolder_name.present? %>
+<% end -%>
+<% if subfolder_name.present? -%>
   <%= 'end' %>
-<% end  %>
+<% end -%>
 <%= 'end' %>

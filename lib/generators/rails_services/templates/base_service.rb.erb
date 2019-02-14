@@ -2,7 +2,6 @@
   <%= 'def self.included(base)' %>
     <%= 'base.extend ClassMethods' %>
   <%= 'end' %>
-
   <%= 'module ClassMethods' %>
     <%= 'def call(*args, &block)' %>
       <%= '@instance ||= self.new' %>
