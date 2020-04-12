@@ -3,7 +3,7 @@
 [![Code Climate](https://codeclimate.com/github/imageaid/rails_service_generator.png)](https://codeclimate.com/github/imageaid/rails_service_generator) 
 [![Gem Version](https://badge.fury.io/rb/rails_services.svg)](http://badge.fury.io/rb/rails_services)  
 
-A simple gem for Rails that adds a generator for easily creating a service class and/or form object and its accompanying spec or test unit file.
+A gem for Rails that adds a generator for easily creating a service class and/or form object and its accompanying spec or test unit file.
 
 ## Requirements 
 
@@ -27,11 +27,11 @@ Or install it yourself as:
 
 Examples: 
 
-    $ rails generate rails_services:create Service Model|Controller --sub_folder Sub-folder [opt]
+    $ [bundle exec] rails generate rails_services:create Service ParentFolder --sub_folder SubFolder [opt]
     
-    $ rails generate rails_services:destroy Service Model|Controller --sub_folder Sub-folder [opt]
+    $ [bundle exec] rails generate rails_services:destroy Service ParentFolder --sub_folder SubFolder [opt]
     
-    $ rails generate rails_services:form Form Model|Controller --sub_folder Sub-folder [opt] --accessors name email [opt]
+    $ [bundle exec] rails generate rails_services:form Form ParentFolder --sub_folder SubFolder [opt] --accessors name email [opt]
 
 ## CHANGES AND NOTES    
 ### Notes: Sub-folders
@@ -43,7 +43,7 @@ more unwieldy than imagined. From version 3.0.0 forward, there are only two argu
 
 If you would like to add a sub-folder to the service or form, you can now provide the `class_option` for it: 
 `--sub_folder NAME_OF_FOLDER`. Similarly, for the form generator, you can pass in an array of `attr_accessors` with 
-the following: `--accessors accessor_1_name accessor_2_name ...`. 
+the following: `--accessors accessor_1_name accessor_2_name ...` (use regular strings as these will be 'converted' to symbols). 
 
 ### Changes: Instance Argument REMOVED
 An instance argument was added in version 2.0.0. While the version 2.x line allowed users to choose between the old and new style, 
@@ -86,19 +86,19 @@ Two files are created (spec or test based on your `test_framework`).
 
 For services: 
 
-+ app/services/model|controller/[sub-folder]/thing.rb
-+ spec/services/model|controller/[sub-folder]/thing_spec.rb
-+ test/services/model|controller/[sub-folder]/thing_test.rb
++ app/services/[parent-folder]/[sub-folder]/thing.rb
++ spec/services/[parent-folder]/[sub-folder]/thing_spec.rb OR
++ test/services/[parent-folder]/[sub-folder]/thing_test.rb
 
 For forms: 
 
-+ app/forms/model|controller/[sub-folder]/thing_form.rb
-+ spec/forms/model|controller/[sub-folder]/thing_form_spec.rb
-+ test/forms/model|controller/[sub-folder]/thing_form_test.rb
++ app/forms/[parent-folder]/[sub-folder]/thing_form.rb
++ spec/forms/[parent-folder]/[sub-folder]/thing_form_spec.rb OR
++ test/forms/[parent-folder]/[sub-folder]/thing_form_test.rb
 
 ## Generator Result (destroy service)
 
-Pretty simple here ... it just removes the files it created
+Pretty simple here ... it just removes the files it created!
 
 ## Contributing
 
