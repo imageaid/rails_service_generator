@@ -65,7 +65,10 @@ you only need to do the following:
        include BaseService
 
      # Then ... optionally, add an initialize method 
-     def initialize(*args); end
+     def initialize(*args)
+       # ... 
+       super
+     end
      
      # Finally, change the method signatures, simply removing `self.` from the definition(s), as follows: 
      def self.call
