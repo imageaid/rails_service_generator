@@ -1,7 +1,6 @@
 # RailsServices
 
 [![Code Climate](https://codeclimate.com/github/imageaid/rails_service_generator.png)](https://codeclimate.com/github/imageaid/rails_service_generator) 
-[![Test Coverage](https://codeclimate.com/github/imageaid/rails_service_generator/coverage.png)](https://codeclimate.com/github/imageaid/rails_service_generator)
 [![Gem Version](https://badge.fury.io/rb/rails_services.svg)](http://badge.fury.io/rb/rails_services)  
 
 A simple gem for Rails that adds a generator for easily creating a service class and/or form object and its accompanying spec or test unit file.
