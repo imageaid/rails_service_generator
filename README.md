@@ -30,21 +30,26 @@ Examples:
     
     $ [bundle exec] rails generate rails_services:form Form ParentFolder --sub_folder SubFolder [opt] --accessors name email [opt]
 
-## CHANGES AND REMOVALS    
-### Changes: new argument structure for the command line
-Previous versions of the gem used plain old arguments to create or destroy the appropriate files. Over time, this became more unwieldy than imagined. From version 3.0.0 forward, there are only two arguments: `object_name` and `parent_name`. 
-
-If you would like to add a sub-folder to the service or form, you can now provide the `class_option` for it: `--sub_folder NAME_OF_FOLDER`. Similarly, for the form generator, you can pass in an array of `attr_accessors` with  the following: `--accessors accessor_1_name accessor_2_name ...` (use regular strings as these will be 'converted' to symbols). 
-
-## v3.0.0
+## v3.0.0 CHANGES AND REMOVALS   
 ### CHANGES
-There are three primary changes in version 3: 
+There are four primary changes in version 3: 
 
 1. All services have `include BaseService` 
 2. The `call` method is an instance method rather than a class method
 3. You may generate a `Form` model
+4. An updated command line interface (see below)
 
-### REMOVED: Instance Argument 
+#### Updated command line interface
+Previous versions of the gem used plain old arguments to create or destroy the appropriate files. Over time, this became more unwieldy than imagined. From version 3.0.0 forward, there are only two arguments: `object_name` and `parent_name`. Additionally, the previously available optional argument, `instance`, was removed (see REMOVALS section, below).
+
+If you would like to add a sub-folder to the service or form, you can now provide the `class_option` for it: `--sub_folder NAME_OF_FOLDER`. Similarly, for the form generator, you can pass in an array of `attr_accessors` with  the following: `--accessors accessor_1_name accessor_2_name ...` (use regular strings as these will be 'converted' to symbols). 
+
+### REMOVALS: 
+There was one significant removal from the gem: 
+
+1. No more `instance` argument in the command line interface (see below)
+
+#### Instance argument dropped
 An instance argument was added in v2.0.0 which allowed users to choose what style of service class to create. The gem defaulted to using this new style. 
 
 While the v2.x line continued to allow users a choice between the old and new^ styles, the v3.x line removes this choice. All services will be created with the now-not-so-new style. BE AWARE :)!
@@ -78,7 +83,7 @@ Should you want to update your older/previously built services with this 'new' s
 ### Sub-folders
 Sub-folders are optional but, at this time, you may only use one sub-folder. I generally only use the sub-folders when I have a naturally grouped set of services.
 
-## Generator Results
+## Generator results
 ### Create service and create form
 Two files are created: the requested class and either a spec or test class, based on your testing framework (minitest or rspec).
 
