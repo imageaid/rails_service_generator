@@ -32,7 +32,7 @@ Examples:
 
 ## v3.0.0 CHANGES AND REMOVALS   
 ### CHANGES
-There are four primary changes in version 3: 
+There are four primary changes in v3.0.0: 
 
 1. All services have `include BaseService` 
 2. The `call` method is an instance method rather than a class method
@@ -40,7 +40,7 @@ There are four primary changes in version 3:
 4. An updated command line interface (see below)
 
 #### Updated command line interface
-Previous versions of the gem used plain old arguments to create or destroy the appropriate files. Over time, this became more unwieldy than imagined. From version 3.0.0 forward, there are only two arguments: `object_name` and `parent_name`. Additionally, the previously available optional argument, `instance`, was removed (see REMOVALS section, below).
+Previous versions of the gem used plain old arguments to create or destroy the appropriate files. Over time, this became more unwieldy than imagined. From v3.0.0 forward, there are only two arguments: `object_name` and `parent_name`. Additionally, the previously available optional argument, `instance`, was removed (see REMOVALS section, below).
 
 If you would like to add a sub-folder to the service or form, you can now provide the `class_option` for it: `--sub_folder NAME_OF_FOLDER`. Similarly, for the form generator, you can pass in an array of `attr_accessors` with  the following: `--accessors accessor_1_name accessor_2_name ...` (use regular strings as these will be 'converted' to symbols). 
 
@@ -57,7 +57,7 @@ While the v2.x line continued to allow users a choice between the old and new^ s
 ^The new style creates service clases inherited from a `BaseService` class; allows for optional instantiation of the service (`Service.new(args*).call`), and uses an instance method for `call`. 
 
 ## NOTES 
-## Upgrading to current service class style 
+### Upgrading to current service class style 
 Should you want to update your older/previously built services with this 'new' style, you only need to do the following:
 
      # include the base service in your class
