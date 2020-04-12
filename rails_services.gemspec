@@ -11,8 +11,8 @@ Gem::Specification.new do |gem|
   gem.version       = RailsServices::VERSION
   gem.authors       = ['Craig Kaminsky']
   gem.email         = ['imageaid@gmail.com']
-  gem.summary       = 'A Ruby gem that adds a rails generator for creating service classes.'
-  gem.description   = 'Speed up development when using a Service Layer by easily creating service classes and their attending test (gem) file.'
+  gem.summary       = 'A Ruby gem that adds a rails generator for creating service classes and form object.'
+  gem.description   = 'Speed up development when using Service layers and Form objects by easily creating those classes and their attending test file.'
   gem.homepage      = 'https://github.com/imageaid/rails_service_generator'
   gem.license       = 'MIT'
 
