@@ -4,7 +4,7 @@
 [![Test Coverage](https://codeclimate.com/github/imageaid/rails_service_generator/coverage.png)](https://codeclimate.com/github/imageaid/rails_service_generator)
 [![Gem Version](https://badge.fury.io/rb/rails_services.svg)](http://badge.fury.io/rb/rails_services)  
 
-A very (VERY) simple gem for Rails that adds a generator for easily creating a service class and its accompanying spec or test unit file.
+A simple gem for Rails that adds a generator for easily creating a service class and/or form object and its accompanying spec or test unit file.
 
 ## Requirements 
 
@@ -28,36 +28,46 @@ Or install it yourself as:
 
 Examples: 
 
-    $ rails generate rails_services:create Service Model|Controller Sub-folder [opt] --instance [yes (default), no]
+    $ rails generate rails_services:create Service Model|Controller --sub_folder Sub-folder [opt]
     
-    $ rails generate rails_services:destroy Service Model|Controller Sub-folder [opt] --instance [yes (default), no]
+    $ rails generate rails_services:destroy Service Model|Controller --sub_folder Sub-folder [opt]
     
-### Sub-folders
+    $ rails generate rails_services:form Form Model|Controller --sub_folder Sub-folder [opt] --accessors name email [opt]
+
+## CHANGES AND NOTES    
+### Notes: Sub-folders
 Sub-folders are optional but, at this time, you may only use one sub-folder. I generally use the sub-folders when I have a naturally grouped set of services.
 
-### Instance Argument
-The instance argument was added in version 2.0.0. It is also optional but does default to `yes` if omitted. In previous iterations of this gem
-as well as in my early use of service layers, I did not instantiate my service classes; rather, I created adn accessed them at the class level,
-calling class methods (i.e., those defined with `self.`).
+### Changes: new argument structure for the command line
+Previous versions of the gem used plain old arguments to create or destroy the appropriate files. Over time, this became
+more unwieldy than imagined. From version 3.0.0 forward, there are only two arguments: `object_name` and `parent_name`. 
 
-I was never satisfied with this and, sometime in the last few months, I read a now-lost blog post on utilizing a `BaseService` class and
-instantiating your actual service. I prefer this new approach, for lack of a better word, and have decided to add it to this gem, as the
-default style used going forward (starting with 2.0.0).
+If you would like to add a sub-folder to the service or form, you can now provide the `class_option` for it: 
+`--sub_folder NAME_OF_FOLDER`. Similarly, for the form generator, you can pass in an array of `attr_accessors` with 
+the following: `--accessors accessor_1_name accessor_2_name ...`. 
+
+### Changes: Instance Argument REMOVED
+An instance argument was added in version 2.0.0. While the version 2.x line allowed users to choose between the old and new style, 
+(new = service clases inherited from a `BaseService` class and instantiated the service), the version 3.x line removes this option. BE AWARE :). 
 
 ## Upgrading
-The primary change in version 2 is that old services, those that do not include the `BaseService` class, called
-and accessed methods that were all defined with `self.`. You do not have to choose one style over another; in fact,
-you can mix and match the styles, if you wish.
+There are two primary changes in version 3: 
 
-**Converting Old Service Classes** - Should you want to update your older/previously built services with this approach, you only need to do
-the following:
+First, all services now include the `BaseService` class and methods in the services are, 
+by default, instance methods rather than class methods. 
+
+Second, the gem now allows you to generate a `Form` object/model.  
+
+**Converting Old Service Classes** - Should you want to update your older/previously built services with this approach, 
+you only need to do the following:
 
      # include the base service in your class
      class ClassName
        include BaseService
 
-     # Then ... add an initialize method and change the method signatures, simply removing from the definition     
-     def call
+     # Then ... optionally, add an initialize method and 
+     # change the method signatures, simply removing self. from the definition(s)     
+     def self.call
        # ...
      end
      # becomes
@@ -66,13 +76,25 @@ the following:
      end
      # and so on for other, similarly defined methods
 
-## Result
+## Generator Result (create service and create form)
 
-Two files are created (spec or test based on your `test_framework`):
+Two files are created (spec or test based on your `test_framework`).
+
+For services: 
 
 + app/services/model|controller/[sub-folder]/thing.rb
 + spec/services/model|controller/[sub-folder]/thing_spec.rb
 + test/services/model|controller/[sub-folder]/thing_test.rb
+
+For forms: 
+
++ app/forms/model|controller/[sub-folder]/thing_form.rb
++ spec/forms/model|controller/[sub-folder]/thing_form_spec.rb
++ test/forms/model|controller/[sub-folder]/thing_form_test.rb
+
+## Generator Result (destroy service)
+
+Pretty simple here ... it just removes the files it created
 
 ## Contributing
 

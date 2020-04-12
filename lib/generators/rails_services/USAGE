@@ -1,18 +1,10 @@
 Description:
     Creates a service class and accompanying spec/test unit file
     Destroys a service class and accompanying spec/test unit file
+    Creates a form object and accompanying spec/test unit file
 
-Example:
-    rails generate rails_services:destroy Thing Model|Controller Sub-folder [opt] --instance [yes (default), no]
-
-    This will remove:
-        app/services/model|controller/[sub-folder]/thing.rb
-        # either
-        spec/services/model|controller/[sub-folder]/thing_spec.rb
-        # or
-        test/services/model|controller/[sub-folder]/thing_test.rb
-
-    rails generate rails_services:create Thing Model|Controller Sub-folder [opt] --instance [yes (default), no]
+Service Example:
+    rails generate rails_services:create Thing Model|Controller -- sub_folder Sub-folder [opt]]
 
     This will add:
         app/services/model|controller/[sub-folder]/thing.rb
@@ -21,7 +13,21 @@ Example:
         # or
         test/services/model|controller/[sub-folder]/thing_test.rb
 
-The new `instance` argument:
-    Over the last year, I have slightly altered how I structure my service classes. I've taken to using a `BaseService`
-    class that is included in all services. This allows me to inherently instantiate each service (versus the old style of
-    creating service class, which was "class-driven", if you will).
+    rails generate rails_services:destroy Thing Model|Controller -- sub_folder Sub-folder [opt]]
+
+    This will remove:
+        app/services/model|controller/[sub-folder]/thing.rb
+        # either
+        spec/services/model|controller/[sub-folder]/thing_spec.rb
+        # or
+        test/services/model|controller/[sub-folder]/thing_test.rb
+
+Form Example:
+    rails generate rails_services:form Thing Model|Controller -- sub_folder Sub-folder [opt] --accessors name email [opt]
+
+    This will add:
+        app/forms/[parent-folder]/[sub-folder]/thing_form.rb
+        # either
+        spec/forms/[parent-folder]/[sub-folder]/thing_form_spec.rb
+        # or
+        test/forms/[parent-folder]/[sub-folder]/thing_form_test.rb

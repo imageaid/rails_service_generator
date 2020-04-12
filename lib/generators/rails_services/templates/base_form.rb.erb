@@ -1,0 +1,30 @@
+<%= '# Generated form object' %>
+<%= "module #{module_name}" %>
+<% if subfolder_name.present? -%>
+  <%= "module #{subfolder_name}" %>
+    <%= '##' %>
+    <%= "# #{qualified_name} Form Object"  %>
+    <%= "class #{form_class_name}" %>
+      <%= 'include ActiveModel::Model' %>
+
+<% if options['accessors'].present? -%>
+      <%= "attr_accessor :#{options['accessors'].join(', :')}" %>
+
+<% end -%>
+      <%= 'def save;' %> <%= 'end' %>
+    <%= 'end' %>
+  <%= 'end' %>
+<% else -%>
+  <%= '##' %>
+  <%= "# #{qualified_name} Form Object"  %>
+  <%= "class #{form_class_name}" %>
+    <%= 'include ActiveModel::Model' %>
+
+<% if options['accessors'].present? -%>
+    <%= "attr_accessor :#{options['accessors'].join(', :')}" %>
+
+<% end -%>
+    <%= 'def save;' %> <%= 'end' %>
+  <%= 'end' %>
+<% end -%>
+<%= 'end' %>

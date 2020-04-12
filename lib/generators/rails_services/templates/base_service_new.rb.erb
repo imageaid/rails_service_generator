@@ -1,25 +1,28 @@
+<%= '# Generated service object' %>
 <%= "module #{module_name}" %>
 <% if subfolder_name.present? -%>
   <%= "module #{subfolder_name}" %>
-<% end -%>
-  <%= '##' %>
-  <%= "# #{qualified_name} Service Class"  %>
-<% if subfolder_name.present? -%>
-    <%= "class #{class_name}" %>
+    <%= '##' %>
+    <%= "# #{qualified_name} Service Class"  %>
+    <%= "class #{service_class_name}" %>
       <%= 'include BaseService' %>
-      <%= "# SAMPLE USAGE: #{qualified_name}.(*args)" %>
+
+      <%= "# SAMPLE USAGE: #{qualified_name}.new(*args).call" %>
       <%= 'def initialize(_args);' %> <%= 'end' %>
+
       <%= 'def call;' %> <%= 'end' %>
     <%= 'end' %>
-<% else -%>
-  <%= "class #{class_name}" %>
-    <%= 'include BaseService' %>
-    <%= "# SAMPLE USAGE: #{qualified_name}.(*args)" %>
-    <%= 'def initialize(_args);' %> <%= 'end' %>
-    <%= 'def call;' %> <%= 'end' %>
   <%= 'end' %>
-<% end -%>
-<% if subfolder_name.present? -%>
+<% else -%>
+  <%= '##' %>
+  <%= "# #{qualified_name} Service Class"  %>
+  <%= "class #{service_class_name}" %>
+    <%= 'include BaseService' %>
+
+    <%= "# SAMPLE USAGE: #{qualified_name}.new(*args).call" %>
+    <%= 'def initialize(_args);' %> <%= 'end' %>
+
+    <%= 'def call;' %> <%= 'end' %>
   <%= 'end' %>
 <% end -%>
 <%= 'end' %>
