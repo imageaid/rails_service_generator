@@ -22,7 +22,7 @@ Gem::Specification.new do |gem|
   gem.test_files    = `git ls-files -- {test,gem,features}/*`.split("\n")
   gem.require_paths = ['lib']
 
-  gem.add_runtime_dependency 'rails', '> 4', '< 7'
+  gem.add_runtime_dependency 'rails'
 
   gem.add_development_dependency 'minitest'
   gem.add_development_dependency 'minitest-reporters'

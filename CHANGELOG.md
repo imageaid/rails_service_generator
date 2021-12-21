@@ -2,6 +2,19 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.0.1] - 2021-12-21
+### Added
+- Updated gem spec to just require Rails (no more specific versions)
+
+## [3.0.0] - 2020-04-12
+### Added
+- Added Form object option,
+- Updated for Rails 6
+
+## [2.5.0] - 2019-02-14
+### Fixed
+- Miscellaneous bug fixes
+
 ## [2.0.1] - 2017-07-16
 ### Added
 - Updating gem for the Rails verions 4 AND 5
